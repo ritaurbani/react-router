@@ -14,7 +14,7 @@ function Card({ title, content, category, image, tags, id, onDelete }) {
                     className='w-75 p-3' />
                     <div>
                         {tags.map((tag,index)=> (
-                        <span key={index}>{tag}</span>
+                        <span className="me-2" key={index}>{tag}</span>
                         ))}
                     </div>
                 <div>

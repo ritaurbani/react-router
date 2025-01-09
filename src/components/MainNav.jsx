@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom"
 
 function MainNav() {
 
+    //ogni link e`un oggetto
 const  navigation = [
         {
             path: "/",

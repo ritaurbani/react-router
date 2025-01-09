@@ -25,8 +25,9 @@ function PostsPage() {
 
     //blocco di inizializzazione
     useEffect(() => {
+        console.log("useEffect")
         getPosts();
-    }, []);
+    }, [filter]);
 
     useEffect(() => {
         getTags()
@@ -38,10 +39,10 @@ function PostsPage() {
         //// Verifica se il filtro è diverso da "all" - il codice aggiunge un parametro alla query string dell'URL. per chiedere al server di restituire solo i dati che corrispondono al filtro.(tag=art)/tag=${filter}
         if (filter !== null && filter !== 'all') {
             // Se il filtro non è "all", aggiungi il parametro di query all'URL (filtra per tag)
-            url += `?tag=${filter}`;
+            url += `?tags=${filter}`;
         }
         axios.get(url).then((resp) => { //Esegui la richiesta GET con l'URL costruito
-            console.log(resp.data);
+            console.log("resp.data: ", resp.data);
             setPosts(resp.data) // setPosts(resp.data.posts || []) //Aggiorna lo stato 'posts' con l'elenco dei posts ricevute
         });
     }
@@ -102,7 +103,6 @@ function PostsPage() {
             ...formData,// Copia l'oggetto stato precedente
             tags: newArray, //aggiorna proprieta'tags con nuovo array
         });
-
     };
 
     //filtering out the post with the id that matches the elementToRemove (passed as a parameter).
@@ -122,12 +122,12 @@ function PostsPage() {
             <div className='container'>
                 <h2 className='text-center mb-4'>Il mio Blog</h2>
 
-                {/* <section>
-          <select name="tag" id="" value={filter} onChange={(event) => setFilter(event.target.value)}>
+                <section>
+          <select className='mb-4' name="tag" id="" value={filter} onChange={(event) => setFilter(event.target.value)}>
             <option value="all">tutte</option>
             {tags.map((curTag, index) => <option key={index} value={curTag}> {curTag}</option>)}
           </select>
-        </section> */}
+        </section>
 
                 {/* INPUT TITLE */}
                 <section>
@@ -174,6 +174,7 @@ function PostsPage() {
                                 <label key={index} htmlFor="viaggio">
                                     {curTag}
                                     <input
+                                    className='me-2'
                                         id={curTag}
                                         type="checkbox"
                                         name={curTag}
