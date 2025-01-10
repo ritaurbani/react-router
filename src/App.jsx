@@ -12,7 +12,7 @@ function App() {
       <Routes>
         {/* //Setti rotta layout con tutte le altre rotte-solo quello che ce nell outlet viene cambiato */}
         <Route element={<AppLayout />}>
-          <Route path="/" element={<HomePage/>} />
+          <Route index element={<HomePage/>} /> 
           <Route path="/posts" element={<PostsPage/>}/>
           <Route path="/about" element={<AboutPage/>}/>
         </Route>
