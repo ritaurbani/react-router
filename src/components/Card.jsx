@@ -5,7 +5,7 @@ function Card({ title, content, category, image, tags, id, onDelete }) {
     const apiBase = "http://localhost:3000";
 
     return (
-        <div className='card'>
+        <div className='card mb-2'>
             <div className='card-body'>
                 <h4>{title}</h4>
                 <p>{content}</p>
@@ -18,7 +18,7 @@ function Card({ title, content, category, image, tags, id, onDelete }) {
                         ))}
                     </div>
                 <div>
-                    <button className='mx-2 btn btn-outline-success btn-sm'
+                    <button className='m-2 btn btn-outline-success btn-sm'
                         onClick={onDelete}>Delete</button>
                 </div>
             </div>

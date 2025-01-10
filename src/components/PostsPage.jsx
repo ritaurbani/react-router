@@ -124,7 +124,7 @@ function PostsPage() {
 
                 <section>
           <select className='mb-4' name="tag" id="" value={filter} onChange={(event) => setFilter(event.target.value)}>
-            <option value="all">tutte</option>
+            <option value="all">Tutte</option>
             {tags.map((curTag, index) => <option key={index} value={curTag}> {curTag}</option>)}
           </select>
         </section>
@@ -174,7 +174,7 @@ function PostsPage() {
                                 <label key={index} htmlFor="viaggio">
                                     {curTag}
                                     <input
-                                    className='me-2'
+                                    className='mx-2'
                                         id={curTag}
                                         type="checkbox"
                                         name={curTag}
