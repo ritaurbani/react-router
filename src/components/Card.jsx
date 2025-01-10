@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Card({ title, content, category, image, tags, id, onDelete }) {
 
@@ -20,6 +21,7 @@ function Card({ title, content, category, image, tags, id, onDelete }) {
                 <div>
                     <button className='m-2 btn btn-outline-success btn-sm'
                         onClick={onDelete}>Delete</button>
+                    <Link className="btn btn-success" to={`/posts/${id}`}>Details</Link>    
                 </div>
             </div>
         </div>

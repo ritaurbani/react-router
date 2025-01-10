@@ -5,6 +5,7 @@ import PostsPage from "./pages/posts/PostsPage";
 import AboutPage from "./pages/AboutPage"
 import PostCreatePage from "./pages/posts/PostCreatePage";
 import ShowPostDetails from "./pages/posts/ShowPostDetails";
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
           <Route path="/posts">
             <Route index element={<PostsPage />} />
             <Route path="create" element={<PostCreatePage />} />
-            <Route path=":id" element={<ShowPostDetails/>}/>
+            <Route path=":id" element={<ShowPostDetails/>}/> //rotta con parametro
           </Route>
 
+        <Route path="*" element={<NotFoundPage/>}/> //rotta con parametro
         </Route>
       </Routes>
     </BrowserRouter>
